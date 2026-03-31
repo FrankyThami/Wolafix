@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (trackPath && car && trackSvg) {
         const pathLength = trackPath.getTotalLength();
-        const duration = 5000; // ms per full loop
+        const duration = 5000;
         let startTime = null;
         let carX = 0, carY = 0;
 
@@ -74,37 +74,26 @@ document.addEventListener("DOMContentLoaded", () => {
             const point = trackPath.getPointAtLength(distance);
             carX = point.x;
             carY = point.y;
-
-            // Move the circle by setting cx/cy
             car.setAttribute('cx', carX);
             car.setAttribute('cy', carY);
-
             requestAnimationFrame(animateCar);
         }
-
         requestAnimationFrame(animateCar);
 
-        // Mouse proximity glow effect
         trackSvg.addEventListener('mousemove', (e) => {
             const svgRect = trackSvg.getBoundingClientRect();
-            const scaleX = 304 / svgRect.width;   // viewBox width / rendered width
-            const scaleY = 112 / svgRect.height;  // viewBox height / rendered height
-
-            // Convert mouse coords to SVG viewBox space
+            const scaleX = 304 / svgRect.width;
+            const scaleY = 112 / svgRect.height;
             const mouseX = (e.clientX - svgRect.left) * scaleX;
             const mouseY = (e.clientY - svgRect.top) * scaleY;
-
             const dx = mouseX - carX;
             const dy = mouseY - carY;
             const dist = Math.sqrt(dx * dx + dy * dy);
-
             if (dist < 25) {
-                // Near — white glow
                 car.setAttribute('fill', '#ffffff');
                 car.setAttribute('filter', 'url(#glow)');
                 car.setAttribute('r', '7');
             } else {
-                // Far — default purple
                 car.setAttribute('fill', '#a855f7');
                 car.removeAttribute('filter');
                 car.setAttribute('r', '5');
@@ -117,5 +106,49 @@ document.addEventListener("DOMContentLoaded", () => {
             car.setAttribute('r', '5');
         });
     }
+
+    // 4. Magnetic Letter Effect on showcase text
+    const magneticLines = document.querySelectorAll('.magnetic-text');
+    const GLOW_RADIUS = 60; // px — how close the mouse must be to light a letter
+
+    magneticLines.forEach(line => {
+        // Split text into individual character <span>s, preserving spaces
+        const text = line.textContent;
+        line.textContent = '';
+        text.split('').forEach(ch => {
+            const span = document.createElement('span');
+            span.className = ch === ' ' ? 'char space' : 'char';
+            span.textContent = ch === ' ' ? '\u00A0' : ch; // non-breaking space for gaps
+            line.appendChild(span);
+        });
+    });
+
+    const allChars = document.querySelectorAll('.magnetic-text .char');
+
+    document.addEventListener('mousemove', (e) => {
+        const mx = e.clientX;
+        const my = e.clientY;
+
+        allChars.forEach(span => {
+            const rect = span.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+            const dist = Math.sqrt((mx - cx) ** 2 + (my - cy) ** 2);
+
+            if (dist < GLOW_RADIUS) {
+                // Intensity fades from 1 (right on it) to 0 (at radius edge)
+                const intensity = 1 - dist / GLOW_RADIUS;
+                const alpha = (intensity * 0.9).toFixed(2);
+                span.classList.add('lit');
+                // Smoothly vary glow strength based on proximity
+                span.style.textShadow =
+                    `0 0 ${Math.round(6 * intensity)}px rgba(255,255,255,${alpha}),` +
+                    `0 0 ${Math.round(18 * intensity)}px rgba(255,255,255,${(intensity * 0.4).toFixed(2)})`;
+            } else {
+                span.classList.remove('lit');
+                span.style.textShadow = '';
+            }
+        });
+    });
 
 });

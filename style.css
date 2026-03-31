@@ -432,6 +432,54 @@ img {
 }
 
 /*=========================================
+  Section 04.8: Showcase with Magnetic Text
+=========================================*/
+.showcase-text-section {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+}
+
+.showcase-text-section .full-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.showcase-text-overlay {
+    position: absolute;
+    top: 6%;
+    right: 4%;
+    text-align: right;
+    line-height: 1;
+}
+
+.magnetic-text {
+    font-family: 'BlackRocker', sans-serif;
+    font-size: clamp(3rem, 6.5vw, 7rem);
+    font-weight: normal;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 0 0 0.1em 0;
+    line-height: 1.05;
+}
+
+.magnetic-text .char {
+    display: inline-block;
+    color: #000000;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+    will-change: color, text-shadow;
+}
+
+.magnetic-text .char.lit {
+    color: #ffffff;
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.95),
+        0 0 25px rgba(255,255,255,0.5);
+}
+
+/*=========================================
   Section 04: Features
 =========================================*/
 .features {
@@ -684,6 +732,65 @@ img {
     font-size: 1.25rem !important;
     border-left: 3px solid var(--color-primary-purple);
     padding-left: 1rem;
+}
+
+.founder-credit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.founder-names {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.founder-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #c084fc;
+    letter-spacing: 0.02em;
+}
+
+.founder-title {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #a855f7;
+    letter-spacing: 0.03em;
+}
+
+.linkedin-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    transition: background var(--transition-smooth), transform var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.linkedin-link:hover {
+    background: rgba(168, 85, 247, 0.3);
+    transform: scale(1.12);
+}
+
+.linkedin-icon {
+    width: 22px;
+    height: 22px;
+    filter: invert(60%) sepia(60%) saturate(400%) hue-rotate(230deg) brightness(110%);
+    transition: filter var(--transition-fast);
+}
+
+.linkedin-link:hover .linkedin-icon {
+    filter: invert(80%) sepia(60%) saturate(500%) hue-rotate(230deg) brightness(120%);
 }
 
 /*=============================================================================
