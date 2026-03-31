@@ -23,8 +23,22 @@ if (!isTouchDevices) {
     let ringX = mouseX;
     let ringY = mouseY;
     
+    // Hide initially until moved
+    dot.style.opacity = '0';
+    ring.style.opacity = '0';
+    
+    dot.style.left = `${mouseX}px`;
+    dot.style.top = `${mouseY}px`;
+    ring.style.left = `${ringX}px`;
+    ring.style.top = `${ringY}px`;
+    
     // 4. Listen for mouse movements
     window.addEventListener('mousemove', (e) => {
+        if(dot.style.opacity === '0') {
+            dot.style.opacity = '1';
+            ring.style.opacity = '1';
+        }
+        
         mouseX = e.clientX;
         mouseY = e.clientY;
         
