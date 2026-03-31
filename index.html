@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WOLFIX | Premium RC Jeep Module Parts</title>
+    <title>Wolafix | Premium RC Jeep Module Parts</title>
     <!-- Poppins Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +14,8 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <!-- Animated Icons Scripts -->
     <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
+    <!-- Anime.js v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/animejs@4.0.0-beta.98/dist/bundles/anime.umd.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -23,8 +25,8 @@
     <header class="site-header">
         <div class="container header-inner">
             <a href="#" class="logo-container">
-                <img src="images/logo.png" alt="WOLAFIX Logo" class="brand-logo">
-                <span class="logo">WOLAFIX</span>
+                <img src="images/logo.png" alt="Wolafix Logo" class="brand-logo">
+                <span class="logo">Wolafix</span>
             </a>
 
             <nav class="desktop-nav">
@@ -58,7 +60,7 @@
             <div class="container hero-inner text-center">
                 <div class="hero-content mx-auto" style="max-width: 900px; margin: 0 auto;">
                     <h1 class="hero-title font-blackrocker">Unleash Your RC Jeep's True Potential</h1>
-                    <p class="hero-subtitle font-poppins">High-performance, custom-designed RC module parts engineered
+                    <p class="hero-subtitle font-poppins">High-performance, custom-designed RC model parts engineered
                         in Sri Lanka.</p>
                     <a href="#shop" class="btn btn-primary btn-large glow-hover btn-pill font-poppins">Explore
                         Catalog</a>
@@ -73,6 +75,32 @@
                     <h2 class="section-title">Why Settle for Less?</h2>
                     <p class="section-desc">Stop paying high international shipping for weak, standard imported parts.
                     </p>
+
+                    <!-- SVG Motion Path Section -->
+                    <div id="svg-createmotionpath" style="margin: 2.5rem auto; max-width: 620px; position: relative;">
+                        <svg id="track-svg" viewBox="0 0 304 112" xmlns="http://www.w3.org/2000/svg"
+                            style="width: 100%; height: auto; display: block;">
+                            <defs>
+                                <linearGradient id="trackGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#a855f7" stop-opacity="0.2" />
+                                    <stop offset="100%" stop-color="#a855f7" stop-opacity="0.6" />
+                                </linearGradient>
+                                <filter id="glow">
+                                    <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+                                    <feMerge>
+                                        <feMergeNode in="coloredBlur" />
+                                        <feMergeNode in="SourceGraphic" />
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            <!-- Track path -->
+                            <path id="motion-path"
+                                d="M189.142857,4 C227.456875,4 248.420457,4.00974888 256.864191,4.00974888 C263.817211,4.00974888 271.61219,3.69583517 274.986231,6.63061513 C276.382736,7.84531176 279.193529,11.3814152 280.479499,13.4815847 C281.719344,15.5064248 284.841964,20.3571626 275.608629,20.3571626 C265.817756,20.3571626 247.262478,19.9013915 243.955117,19.9013915 C239.27946,19.9013915 235.350655,24.7304885 228.6344,24.7304885 C224.377263,24.7304885 219.472178,21.0304113 214.535324,21.0304113 C207.18393,21.0304113 200.882842,30.4798911 194.124187,30.4798911 C186.992968,30.4798911 182.652552,23.6245972 173.457298,23.6245972 C164.83277,23.6245972 157.191045,31.5424105 157.191045,39.1815359 C157.191045,48.466779 167.088672,63.6623005 166.666679,66.9065088 C166.378668,69.1206889 155.842137,79.2568633 151.508744,77.8570506 C145.044576,75.7689355 109.126667,61.6405346 98.7556561,52.9785141 C96.4766876,51.0750861 89.3680347,39.5769094 83.4195005,38.5221785 C80.6048001,38.0231057 73.0179337,38.7426555 74.4158694,42.6956376 C76.7088819,49.1796531 86.3280337,64.1214904 87.1781062,66.9065088 C88.191957,70.2280995 86.4690152,77.0567847 82.2060607,79.2503488 C79.2489435,80.7719756 73.1324132,82.8858479 64.7015706,83.0708761 C55.1604808,83.2802705 44.4254811,80.401884 39.1722168,80.401884 C25.7762119,80.401884 24.3280517,89.1260466 22.476679,94.4501705 C21.637667,96.8629767 20.4337535,108 33.2301959,108 C37.8976087,108 45.0757044,107.252595 53.4789069,103.876424 C61.8821095,100.500252 122.090049,78.119656 128.36127,75.3523302 C141.413669,69.5926477 151.190142,68.4987755 147.018529,52.0784879 C143.007818,36.291544 143.396957,23.4057975 145.221196,19.6589263 C146.450194,17.1346449 148.420955,14.8552817 153.206723,15.7880203 C155.175319,16.1716965 155.097637,15.0525421 156.757598,11.3860986 C158.417558,7.71965506 161.842736,4.00974888 167.736963,4.00974888 C177.205308,4.00974888 184.938832,4 189.142857,4 Z"
+                                fill="none" stroke="url(#trackGrad)" stroke-width="2" stroke-dasharray="5 4" />
+                            <!-- The car element inside SVG - solid circle -->
+                            <circle id="motion-car" cx="0" cy="0" r="5" fill="#a855f7" />
+                        </svg>
+                    </div>
                 </div>
 
                 <div class="solution-grid">
@@ -81,7 +109,7 @@
                         <p>High shipping fees, long wait times, and brittle components that break under pressure.</p>
                     </div>
                     <div class="card solution-card highlight-card">
-                        <h3 class="card-title">The WOLAFIX Solution</h3>
+                        <h3 class="card-title">The Wolafix Solution</h3>
                         <p>Premium, locally engineered parts designed in Sri Lanka to outlast the competition, saving
                             you time and cost.</p>
                     </div>
@@ -153,64 +181,86 @@
         </section>
 
         <!-- Section 04.5: What We Build -->
-        <section class="what-we-build hidden-section section-padding">
+        <section class="what-we-build hidden-section section-padding" id="showroom">
             <div class="container">
                 <h2 class="section-title text-center">What We Build</h2>
+                <p class="section-intro-text font-poppins text-center">
+                    At Wolafix, we create high-performance RC parts built for speed, strength, and style. From custom
+                    3D-printed and fabricated components to precision color-coated finishes, every product is made to
+                    stand out. We also reverse engineer parts to match your exact needs and offer ready-made upgrades
+                    for instant performance. Built in Sri Lanka — engineered to perform.
+                </p>
                 <div class="projects-grid">
-                    <div class="project-card">
-                        <img src="images/prj1.jpeg" alt="Project 1" class="project-img">
-                        <div class="project-overlay text-left">
-                            <a href="project01.html" class="btn btn-primary btn-pill font-poppins">See More</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <img src="images/prj2.png" alt="Project 2" class="project-img">
-                        <div class="project-overlay text-left">
-                            <a href="project01.html" class="btn btn-primary btn-pill font-poppins">See More</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <img src="images/prj3.png" alt="Project 3" class="project-img">
-                        <div class="project-overlay text-left">
-                            <a href="project01.html" class="btn btn-primary btn-pill font-poppins">See More</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Expanded Catalog Intro Block within "What We Build" -->
-                <div class="split-layout" style="margin-top: 6rem; gap: 4rem;">
-                    <!-- Left: Placeholder for future image -->
-                    <div class="about-image-wrapper">
-                        <div class="image-placeholder"
-                            style="width: 100%; height: 350px; background-color: var(--color-bg-ash); border-radius: 8px; border: 1px dashed rgba(168, 85, 247, 0.4); display: flex; align-items: center; justify-content: center;">
-                            <span style="color: var(--color-text-gray);">Space for future image</span>
-                        </div>
-                    </div>
-
-                    <!-- Right: Catalog text and button -->
-                    <div class="about-content"
-                        style="display: flex; flex-direction: column; justify-content: center; text-align: left;">
-                        <p class="font-poppins"
-                            style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.5rem; color: var(--color-text-white);">
-                            RC modification parts are specialized components designed to enhance the performance,
-                            durability, and visual appeal of remote-controlled vehicles. These parts include upgraded
-                            motors, high-torque servos, precision suspension systems, custom chassis components, and
-                            advanced electronic speed controllers (ESCs), all tailored to improve speed, handling, and
-                            control. Enthusiasts often use lightweight materials like carbon fiber and aluminum to
-                            increase strength while reducing weight. In addition to performance upgrades, aesthetic
-                            modifications such as custom body shells, LED lighting.
-                        </p>
-                        <div style="text-align: left;">
-                            <a href="catalogue.html" class="btn btn-primary btn-pill font-poppins"
-                                style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding-left: 1.5rem; padding-right: 2rem;">
-                                <animated-icons
-                                    src="https://animatedicons.co/get-icon?name=Cart%20V1&style=minimalistic&token=59221abf-fecf-42e8-8159-20b4d18b8713"
-                                    trigger="loop"
-                                    attributes='{"variationThumbColour":"#f8fafc","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":1,"defaultColours":{"group-1":"#f8fafc","group-2":"#f8fafc","background":"transparent"}}'
-                                    height="28" width="28"></animated-icons> Shop here
+                    <!-- Grid 01: Movable Flatbed Tray -->
+                    <div class="project-card" id="grid-01">
+                        <img src="images/Grids/prj1.jpeg" alt="Wolafix Movable Flatbed Tray for MN82"
+                            class="project-img" loading="lazy">
+                        <div class="project-overlay">
+                            <p class="grid-card-text font-poppins">Wolafix Movable Flatbed Tray for MN82, our
+                                custom-built part with a smooth movable bed and high-quality finish, designed for
+                                durability and realistic performance.</p>
+                            <a href="project01.html" class="grid-next-btn" aria-label="View project details">
+                                <img src="icon/next-svgrepo-com.svg" alt="Next" class="next-icon">
                             </a>
                         </div>
                     </div>
+
+                    <!-- Grid 02: Overland Roof Rack -->
+                    <div class="project-card" id="grid-02">
+                        <img src="images/Grids/prj2.png" alt="Wolafix MN82 RC Overland Roof Rack" class="project-img"
+                            loading="lazy">
+                        <div class="project-overlay">
+                            <p class="grid-card-text font-poppins">Wolafix MN82 RC Overland Roof Rack, our
+                                custom-designed part with a durable build and high-quality finish, made for both style
+                                and performance.</p>
+                            <a href="project01.html" class="grid-next-btn" aria-label="View project details">
+                                <img src="icon/next-svgrepo-com.svg" alt="Next" class="next-icon">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Grid 03: Overland Rack Premium -->
+                    <div class="project-card" id="grid-03">
+                        <img src="images/Grids/prj3.png" alt="Wolafix MN82 RC Overland Rack" class="project-img"
+                            loading="lazy">
+                        <div class="project-overlay">
+                            <p class="grid-card-text font-poppins">Wolafix MN82 RC Overland Rack, a premium sourced part
+                                with a durable build and quality finish, perfect for enhancing both style and
+                                performance.</p>
+                            <a href="project01.html" class="grid-next-btn" aria-label="View project details">
+                                <img src="icon/next-svgrepo-com.svg" alt="Next" class="next-icon">
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Shop CTA Split Block -->
+                <div class="shop-split" style="margin-top: 6rem;">
+
+                    <!-- Left: shopimg.png — clean, no border, oversized -->
+                    <div class="shop-img-side">
+                        <img src="images/shopimg.png" alt="Wolafix RC Parts Shop" class="shop-hero-img" loading="lazy">
+                    </div>
+
+                    <!-- Right: Marketing copy + CTA -->
+                    <div class="shop-copy-side">
+                        <h2 class="font-blackrocker shop-headline">Shop our RC parts at Wolafix</h2>
+                        <p class="font-poppins shop-body">where performance meets style. From custom 3D-printed upgrades
+                            to precision-fabricated components, we build parts that are strong, lightweight, and
+                            seriously cool.</p>
+
+                        <h3 class="font-blackrocker shop-subheading">Need something unique?</h3>
+                        <p class="font-poppins shop-body">We've got you covered with reverse engineering and custom
+                            builds made just for you. Whether it's ready-made upgrades or one-of-a-kind designs, Wolafix
+                            delivers that wow factor your RC deserves.</p>
+
+                        <a href="catalogue.html" class="btn btn-primary btn-pill font-poppins shop-cta-btn">
+                            <img src="icon/cart-plus-svgrepo-com.svg" alt="Shop" class="shop-btn-icon"> Shop Now
+                        </a>
+                    </div>
+
                 </div>
 
             </div>
